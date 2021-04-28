@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Disparo : MonoBehaviour
 {
-    public Transform Firepoint;
+    public GameObject bala;
+    public float firerate = 0.5f;
+    float nextfire = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,20 @@ public class Disparo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
+        if (Input.GetKeyDown(KeyCode.R) && Time.time>nextfire)
+        {
+            
+
+            nextfire = Time.time + firerate;
+            fire();
+                
+
+        }
+    }
+
+    void fire()
+    {
+        Instantiate(bala, transform.position, Quaternion.identity);
     }
 }

@@ -29,6 +29,7 @@ public class MovSprite : MonoBehaviour
             rb2d.AddForce(new Vector2(0, jumpPower));
            
         }
+       
 
     }
   
